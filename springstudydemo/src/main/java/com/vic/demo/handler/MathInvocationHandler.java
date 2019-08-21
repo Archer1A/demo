@@ -5,7 +5,7 @@ import java.lang.reflect.Method;
 import java.lang.reflect.Proxy;
 
 /**
- * MathInvocattionHandler
+ * MathInvocationHandler
  *
  * @author Vic
  * @date 2019/8/20
@@ -37,6 +37,10 @@ public class MathInvocationHandler implements InvocationHandler {
         return result;
     }
 
+    /**
+     * 获取代理对象
+     * @return
+     */
     public Object getProxy() {
         return Proxy.newProxyInstance(Thread.currentThread().getContextClassLoader(), target.getClass().getInterfaces(), this);
     }

@@ -18,8 +18,11 @@ public class ProxyTest {
     public void testProxy() {
         // 实例化目标
         MathCalculatorService mathCalculatorService = new MathCalculatorServiceImpl();
+        // 设置代理
         MathInvocationHandler mathInvocationHandler = new MathInvocationHandler(mathCalculatorService);
+        // 获取被代理的对象
         MathCalculatorService proxy = (MathCalculatorService) mathInvocationHandler.getProxy();
+        // 调用增强后的方法
         proxy.add(1, 1);
     }
 }
